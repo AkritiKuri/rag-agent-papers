@@ -53,7 +53,7 @@ Try queries like:
 
 ```bash
 python -m src.mlflow_experiments
-mlflow ui   # http://localhost:5000
+
 ```
 
 This runs 4 configs (varying chunk size, embedding model, and k) and
