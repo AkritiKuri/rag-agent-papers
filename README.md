@@ -67,9 +67,6 @@ echo "ANTHROPIC_API_KEY=your_key_here" > .env
 docker compose up --build
 ```
 
-- App: http://localhost:8501
-- MLflow UI: http://localhost:5000
-
 ## 6. Deploy (optional, for a live link)
 
 Push to GitHub, then deploy `app.py` on Streamlit Community Cloud or a
