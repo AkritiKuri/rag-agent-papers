@@ -53,7 +53,7 @@ Try queries like:
 
 ```bash
 python -m src.mlflow_experiments
-mlflow ui   # http://localhost:5000
+
 ```
 
 This runs 4 configs (varying chunk size, embedding model, and k) and
@@ -66,9 +66,6 @@ retrieval distance for each — real numbers you can point to.
 echo "ANTHROPIC_API_KEY=your_key_here" > .env
 docker compose up --build
 ```
-
-- App: http://localhost:8501
-- MLflow UI: http://localhost:5000
 
 ## 6. Deploy (optional, for a live link)
 
