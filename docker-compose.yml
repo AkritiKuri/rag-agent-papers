@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  rag-agent:
+    build: .
+    container_name: rag-paper-agent
+    ports:
+      - "8501:8501"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - mlflow
+
+  mlflow:
+    image: python:3.11-slim
+    container_name: rag-mlflow
+    working_dir: /mlflow
+    command: >
+      bash -c "pip install --no-cache-dir mlflow==2.18.0 &&
+               mlflow server --host 0.0.0.0 --port 5000
+               --backend-store-uri /mlflow/mlruns"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
