@@ -1,5 +1,6 @@
 .env
 data/faiss_index*
+data/papers/
 mlruns/
 __pycache__/
 *.pyc
